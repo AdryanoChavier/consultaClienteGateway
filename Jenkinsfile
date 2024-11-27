@@ -16,7 +16,7 @@ pipeline {
         stage('Fazer Deploy') {
             steps {
                 script {
-                    def appName = 'arquivosbackendnest'
+                    def appName = 'apigateway'
                     def imageTag = "${appName}"
                     // Parar e remover o container existente, se houver
                     bat "docker stop ${appName} || true"
