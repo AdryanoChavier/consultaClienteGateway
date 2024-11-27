@@ -18,6 +18,8 @@ pipeline {
                 script {
                     def appName = 'apigateway'
                     def imageTag = "${appName}"
+                    bat  "docker stop ${appName} || true"
+                    bat  "docker rm ${appName} || true"
                     // Executar o novo container
                     bat "docker run -d --name ${appName} --network arquivos-network  -p 3000:3000 ${imageTag}"
                 }
